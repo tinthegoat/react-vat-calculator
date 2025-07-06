@@ -93,6 +93,8 @@ input[type="number"]:focus {
   font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
+  margin-top: 10px;
+  align-self: center;
 }
 
 .resetBtn:hover,
