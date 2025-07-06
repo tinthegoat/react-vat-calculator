@@ -30,11 +30,11 @@ function App() {
 
   return (
     <>
-      <div className='header'>
-        <h2>VAT Calculator</h2>
-      </div>
       <div className='container'>
+        <div className='header'>
+        <h2 className='heading'>VAT Calculator</h2>
         <img src={vatImage} alt="vat" />
+        </div>
         <div className='card-container'>
           <div className="card">
             <label htmlFor="">Price:</label>
