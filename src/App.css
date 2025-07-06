@@ -1,25 +1,3 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -33,17 +11,26 @@
 body {
   background-color: #22092C;
   color: #F05941;
+  background-image: linear-gradient(rgba(34,9,44,0.85), rgba(34,9,44,0.85)), url('https://images.unsplash.com/photo-1584384689201-e0bcbe2c7f1d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   background-color: #F05941;
   color: #872341;
   padding: 20px;
   height: 8svh;
+  
 }
 
+
 img {
-  height: 250px;
+  width: 400px;
   border-radius: 10px;
   box-shadow: 0 4px 20px 0 rgba(240, 89, 65, 0.7), 0 1.5px 6px 0 rgba(0,0,0,0.5);
 }
@@ -94,4 +81,54 @@ input[type="number"] {
 input[type="number"]:focus {
   border-color: #F05941;
   box-shadow: 0 0 0 2px rgba(240, 89, 65, 0.15);
+}
+
+.resetBtn {
+  padding-right: 8px;
+  padding: 7px 10px;
+  background-color: #F05941;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.resetBtn:hover,
+.resetBtn:focus {
+  background-color: #872341;
+  color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(135, 35, 65, 0.18);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 5px;
+    gap: 30px;
+  }
+  .card-container {
+    padding: 12px;
+    width: 300px;
+    box-sizing: border-box;
+  }
+  
+  img {
+    width: 300px;
+  }
+
+  .header {
+    padding: 12px 5px;
+    font-size: 1.1rem;
+    height: auto;
+  }
+  .input-row label {
+    min-width: 90px;
+    font-size: 0.95rem;
+  }
+  input[type="number"] {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+  }
 }

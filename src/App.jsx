@@ -41,25 +41,36 @@ function App() {
             <input
               type="number"
               placeholder="Enter price"
+              value={price === 0 ? '' : price}
               onChange={handleChange}
             />
-            </div>
-            <div className="card">
-              <label htmlFor="">Discount:</label>
-              <input
-                type="number"
-                placeholder="Enter discount"
-                onChange={handleDiscountChange}
-              />
-              <br />
-            </div>
-            <div>Price: {price}</div>
-            <div>Discount: {discount}</div>
-            <div>VAT Rate: {(vatRate * 100).toFixed(2) + "%"}</div>
-            <div>VAT: {vat.toFixed(2)}</div>
-            <div>Total: {total.toFixed(2)}</div>
           </div>
+          <div className="card">
+            <label htmlFor="">Discount:</label>
+            <input
+              type="number"
+              placeholder="Enter discount"
+              value={discount === 0 ? '' : discount}
+              onChange={handleDiscountChange}
+            />
+          </div>
+          <div>Price: {price}</div>
+          <div>Discount: {discount}</div>
+          <div>VAT Rate: {(vatRate * 100).toFixed(2) + "%"}</div>
+          <div>VAT: {vat.toFixed(2)}</div>
+          <div>Total: {total.toFixed(2)}</div>
+          <button className='resetBtn'
+            onClick={() => {
+              setPrice(0);
+              setDiscount(0);
+              setVat(0);
+              setTotal(0);
+            }}
+          >
+            reset
+          </button>
         </div>
+      </div>
     </>
   )
 }
