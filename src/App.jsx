@@ -1,0 +1,67 @@
+import { useState } from 'react'
+import './App.css'
+import vatImage from './assets/vat.jpg'
+
+function App() {
+  const [price, setPrice] = useState(0);
+  const vatRate = 0.07;
+  const [vat, setVat] = useState(0);
+  const [total, setTotal] = useState(0);
+
+    function handleChange(event) {
+      let p = parseFloat(event.target.value) || 0;
+      console.log(p);
+      setPrice(p);
+      const calculatedVat = p * vatRate;
+      setVat(calculatedVat);
+      setTotal(p + calculatedVat);
+    }
+
+  const [discount, setDiscount] = useState(0);
+
+  function handleDiscountChange(event) {
+    let d = parseFloat(event.target.value) || 0;
+    setDiscount(d);
+    const discountedPrice = price - d;
+    const calculatedVat = discountedPrice * vatRate;
+    setVat(calculatedVat);
+    setTotal(discountedPrice + calculatedVat);
+  }
+
+  return (
+    <>
+      <div className='header'>
+        <h2>VAT Calculator</h2>
+      </div>
+      <div className='card-container'>
+        <img src={vatImage} alt="vat" />
+        <div className="card">
+          <label htmlFor="">Price:</label>
+          <input
+            type="number"
+            placeholder="Enter price"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="card">
+          <label htmlFor="">Discount:</label>
+          <input
+            type="number"
+            placeholder="Enter discount"
+            onChange={handleDiscountChange}
+          />
+        </div>
+        <div className='results'>
+          <div>Price: {price}</div>
+          <div>Discount: {discount}</div>
+          <div>VAT Rate: {(vatRate * 100).toFixed(2) + "%"}</div>
+          <div>VAT: {vat.toFixed(2)}</div>
+          <div>Total: {total.toFixed(2)}</div>
+        </div>
+
+      </div>
+    </>
+  )
+}
+
+export default App
