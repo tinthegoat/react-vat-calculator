@@ -33,33 +33,33 @@ function App() {
       <div className='header'>
         <h2>VAT Calculator</h2>
       </div>
-      <div className='card-container'>
+      <div className='container'>
         <img src={vatImage} alt="vat" />
-        <div className="card">
-          <label htmlFor="">Price:</label>
-          <input
-            type="number"
-            placeholder="Enter price"
-            onChange={handleChange}
-          />
+        <div className='card-container'>
+          <div className="card">
+            <label htmlFor="">Price:</label>
+            <input
+              type="number"
+              placeholder="Enter price"
+              onChange={handleChange}
+            />
+            </div>
+            <div className="card">
+              <label htmlFor="">Discount:</label>
+              <input
+                type="number"
+                placeholder="Enter discount"
+                onChange={handleDiscountChange}
+              />
+              <br />
+            </div>
+            <div>Price: {price}</div>
+            <div>Discount: {discount}</div>
+            <div>VAT Rate: {(vatRate * 100).toFixed(2) + "%"}</div>
+            <div>VAT: {vat.toFixed(2)}</div>
+            <div>Total: {total.toFixed(2)}</div>
+          </div>
         </div>
-        <div className="card">
-          <label htmlFor="">Discount:</label>
-          <input
-            type="number"
-            placeholder="Enter discount"
-            onChange={handleDiscountChange}
-          />
-        </div>
-        <div className='results'>
-          <div>Price: {price}</div>
-          <div>Discount: {discount}</div>
-          <div>VAT Rate: {(vatRate * 100).toFixed(2) + "%"}</div>
-          <div>VAT: {vat.toFixed(2)}</div>
-          <div>Total: {total.toFixed(2)}</div>
-        </div>
-
-      </div>
     </>
   )
 }
